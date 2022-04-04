@@ -4,7 +4,7 @@ all: # keys must be unique, i.e. only one 'hosts' per group
         test2:
             host_var: value
     vars:
-        removed_group_all_var: value
+        group_all_var: value
     children:   # key order does not matter, indentation does
         other_group:
             children:
