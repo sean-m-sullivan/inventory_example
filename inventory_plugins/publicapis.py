@@ -91,7 +91,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
                 "Link",
                 "Category",
             ):
-                self.inventory.set_variable(host_name, field_name, entry[field_name])
+                self.inventory.set_variable(host_name, 'str'+field_name, entry[field_name])
         return
 
     def verify_file(self, path):
