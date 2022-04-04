@@ -27,4 +27,4 @@ all: # keys must be unique, i.e. only one 'hosts' per group
             hosts:
                 test1 # same host as above, additional group membership
             vars:
-                group_last_var: value
+                new_group_last_var: value
