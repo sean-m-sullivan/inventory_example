@@ -1,0 +1,19 @@
+f5_hosts:
+  hosts:
+    internal01.stralfors.se:
+      # ansible_host: '172.31.16.10'
+    internal02.stralfors.se:
+      # ansible_host: '172.31.16.11'
+  vars:
+    dg_name: 'device-group-failover-454977212df6'
+    f5_partition: "ocp-{{ cluster_name }}"
+    f5_vlan: "/{{ f5_partition }}/490-LbyVlan"
+    f5_state: active
+    ansible_user: "{{ f5_user }}"
+    ansible_ssh_pass: "{{ lookup('hashi_vault', 'secret=awx/data/linux/dev-sandbox-lby:data')['bigip_password'] }}"
+    f5_user: "sa-{{ f5_partition }}"
+    provider:
+      server: "{{ ansible_host }}"
+      user: "{{ f5_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      validate_certs: false
